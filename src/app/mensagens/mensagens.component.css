@@ -1,0 +1,27 @@
+h1 {
+  font-family: 'Arial', sans-serif;
+  color: #FF0188;
+}
+
+form {
+  background-color: #18162A;
+  border-radius: 8px;
+}
+
+button {
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #01040D;
+}
+
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
