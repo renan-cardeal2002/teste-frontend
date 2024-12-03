@@ -1,0 +1,47 @@
+<div class="container">
+  <h4 class="text-center">Histórico de mensagens</h4>
+  <ul class="list-group" style="max-height: 25vh; overflow: auto">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <span>Remetente</span>
+      <span>Mensagem</span>
+      <span>Destinatário</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let mensagem of mensagens">
+      <span>{{ mensagem.cliente_id }}</span>
+      <span>{{ mensagem.texto }}</span>
+      <small class="text-muted">({{ mensagem.numero_destino }})</small>
+    </li>
+  </ul>
+
+  <form (ngSubmit)="enviarMensagem()" class="card p-4 shadow-sm mt-2">
+    <div class="form-group mb-3">
+      <label for="texto" class="form-label" style="color: white">Para quem deseja enviar a mensagem?</label>
+      <input
+        type="tel"
+        id="numero_destino"
+        [(ngModel)]="numero_destino"
+        name="texto"
+        class="form-control"
+        placeholder="5511999999999"
+        required
+      />
+    </div>
+    <div class="form-group mb-3">
+      <textarea
+        type="text"
+        id="texto"
+        [(ngModel)]="novaMensagem"
+        name="texto"
+        class="form-control"
+        placeholder="Digite sua mensagem aqui..."
+        required>
+      </textarea>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">
+      Enviar
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+        <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+      </svg>
+    </button>
+  </form>
+</div>
