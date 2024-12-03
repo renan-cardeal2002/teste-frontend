@@ -29,11 +29,11 @@
     <button type="submit" class="btn btn-primary w-100">Enviar</button>
   </form>
 
-  <h2 class="mt-5">Mensagens Recebidas</h2>
+  <h2 class="mt-5">Mensagens Enviadas</h2>
   <ul class="list-group">
     <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let mensagem of mensagens">
       <span>{{ mensagem.texto }}</span>
-      <small class="text-muted">({{ mensagem.numero_destino }})</small>
+      <small class="text-muted">to ({{ mensagem.numero_destino }})</small>
     </li>
   </ul>
 </div>
